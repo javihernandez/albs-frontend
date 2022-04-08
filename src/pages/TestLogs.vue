@@ -189,8 +189,10 @@ export default defineComponent({
       Loading.show()
       this.$api.get(`/tests/${this.taskId}/latest`)
         .then(response => {
+          console.log(response)
           this.$api.get(`/tests/${this.taskId}/logs`)
             .then(logs => {
+              console.log(logs)
               Loading.hide()
               this.taps = logs.data
             response.data.forEach(test => {
